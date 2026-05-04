@@ -154,6 +154,7 @@ SPECTACULAR_SETTINGS = {
 }
 
 # CORS Configuration
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:3000,http://localhost:5173,https://ethara-proj.netlify.app', cast=Csv())
 
 CORS_ALLOW_CREDENTIALS = True
