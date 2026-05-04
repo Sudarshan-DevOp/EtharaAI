@@ -29,7 +29,16 @@ class UserCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data.pop('password_confirm')
         password = validated_data.pop('password')
+        
+        # If this is the first user, make them an admin
+        is_first_user = User.objects.count() == 0
+        
         user = User(**validated_data)
+        if is_first_user:
+            user.role = 'admin'
+            user.is_staff = True
+            user.is_superuser = True
+            
         user.set_password(password)
         user.save()
         return user
