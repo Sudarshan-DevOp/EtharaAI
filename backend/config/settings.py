@@ -154,7 +154,7 @@ SPECTACULAR_SETTINGS = {
 }
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:3000,http://localhost:5173,https://etharaai.netlify.app', cast=Csv())
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:3000,http://localhost:5173,https://ethara-proj.netlify.app', cast=Csv())
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -181,5 +181,5 @@ if not DEBUG:
     }
     CSRF_TRUSTED_ORIGINS = [
         'https://etharaai-ascw.onrender.com',
-        'https://etharaai.netlify.app'
+        'https://ethara-proj.netlify.app'
     ]
